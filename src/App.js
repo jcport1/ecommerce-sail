@@ -16,9 +16,7 @@ class App extends Component {
     return (
       <div>
         <header>
-          <div className="header">
-            <p>Ecommerce </p>
-            </div>
+          <a href="/">React Ecommerce Sail App</a>
         </header>
           <main>
           <Products products={this.state.products} />
