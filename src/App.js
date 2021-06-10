@@ -1,12 +1,32 @@
+import React, { Component } from 'react';
+import Products from "./components/Products";
+import data from "./data.json";
 
-function App() {
-  return (
-    <div>
-      <header>
-        <p>Hello, World!</p>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  constructor() {
+    super();
+    this.state = { 
+      products: data.products
+    };
+  }
+
+  render() { 
+     
+    return (
+      <div className="grid-container">
+        <header>
+          <a href="/">React Ecommerce Sail App</a>
+        </header>
+          <main>
+          <Products products={this.state.products} />
+          </main>
+        <footer>
+          <p>Footer</p>
+        </footer>
+      </div>
+    );
+  }
 }
 
 export default App;

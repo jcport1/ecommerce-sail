@@ -1,0 +1,51 @@
+{
+    "products": [
+        {
+            "_id": "sail1",
+            "image": "images/sail1.jpg",
+            "title": "Racing Mainsail",
+            "description": "Built To Race",
+            "price": 299.99
+        },
+
+        {
+            "_id": "sail2",
+            "image": "/images/sail2.jpg",
+            "title": "Roller Furling Genoa",
+            "description": "The Essential Cruising HeadSail",
+            "price": 599.99
+        },
+
+        {
+            "_id": "sail3",
+            "image": "/images/sail3.jpg",
+            "title": "Racing Jib",
+            "description": "High Aspect Performance",
+            "price": 399.99
+        },
+
+        {
+            "_id": "sail4",
+            "image": "/images/sail4.jpeg",
+            "title": "Boom Furling Mainsail",
+            "description": "Full Performance - Full Control",
+            "price": 489.99
+        },
+
+        {
+            "_id": "sail5",
+            "image": "/images/sail5.png",
+            "title": "Racing Asymmetric Spinnakers",
+            "description": "Smooth, Fast and Stable",
+            "price": 259.99
+        },
+
+        {
+            "_id": "sail6",
+            "image": "/images/sail6.jpeg",
+            "title": "Roller Furling Jib",
+            "description": "Modern Upwind Cruising",
+            "price": 359.99
+        }
+    ]
+}
