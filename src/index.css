@@ -37,8 +37,23 @@ a:hover {
   display: grid;
   justify-content: center;
   align-items: center;
-  border: 5pmx solid rgba(0,0,0,0.3 );
-  border-radius: 3px;
+}
+
+.item p {
+  text-align: center;
+  margin: 0 0 5px 0;
+}
+
+.product-price {
+  display: grid;
+  grid-gap: 10px;
+  padding: 20px;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+}
+
+.product-price p {
+  text-align: center;
 }
 
 .item img {
