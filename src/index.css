@@ -7,6 +7,16 @@ body {
   background-size: 340px, auto;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-areas: "header"
+  "main"
+  "footer";
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+  height: 100vh;
+}
+
 a {
   text-decoration: none;
 }
@@ -15,13 +25,28 @@ a:hover {
   color: #ff8000;
 }
 
+
 /* header */
 
-.header {
+header {
+  grid-area: header;
+  display: flex;
   background-color: #203040;
+  color: #ffffff;
   padding: 30px;
-  text-align: center;
+  align-items: center;
   font-size: 35px;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Main */
+
+main {
+  grid-area: main;
 }
 
 /* Products */
@@ -78,9 +103,13 @@ a:hover {
 
 /* Footer */
 
-.footer {
-  background-color: #f1f1f1;
+footer {
+  grid-area: footer;
+  display: flex;
+  background-color: #203040;
+  color: #ffffff;
   padding: 10px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 

@@ -14,7 +14,7 @@ class App extends Component {
   render() { 
      
     return (
-      <div>
+      <div className="grid-container">
         <header>
           <a href="/">React Ecommerce Sail App</a>
         </header>
@@ -22,9 +22,7 @@ class App extends Component {
           <Products products={this.state.products} />
           </main>
         <footer>
-          <div className="footer">
           <p>Footer</p>
-          </div>
         </footer>
       </div>
     );
