@@ -5,10 +5,13 @@ export default class Products extends Component {
     render() {
         return (
             <div>
-            <ul>
+            <ul className="products">
             {this.props.products.map(product => (
-                <li>
-                    <p>{product.title}</p>
+                <li key={product._id}>
+                    <div className="item">
+                        <img src={product.image} alt={product.title}></img>
+                        <p>{product.title}</p>
+                    </div>
                 </li>
             ))}
             </ul>

@@ -2,7 +2,7 @@
     "products": [
         {
             "_id": "sail1",
-            "image": "/images/sail1.jpg",
+            "image": "images/sail1.jpg",
             "title": "Racing Mainsail",
             "description": "Built To Race",
             "price": 299.99
@@ -26,7 +26,7 @@
 
         {
             "_id": "sail4",
-            "image": "/images/sail4.jpg",
+            "image": "/images/sail4.jpeg",
             "title": "Boom Furling Mainsail",
             "description": "Full Performance - Full Control",
             "price": 489.99
@@ -42,7 +42,7 @@
 
         {
             "_id": "sail6",
-            "image": "/images/sail6.jpg",
+            "image": "/images/sail6.jpeg",
             "title": "Roller Furling Jib",
             "description": "Modern Upwind Cruising",
             "price": 359.99
