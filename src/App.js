@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Products from "./components/Products";
+import Cart from "./components/Cart";
 import data from "./data.json";
 
 class App extends Component {
@@ -7,8 +8,31 @@ class App extends Component {
   constructor() {
     super();
     this.state = { 
-      products: data.products
+      products: data.products,
+      cartItems: [],
     };
+  }
+
+  removeFromCart = (product) => {
+    const cartItems = this.state.cartItems.slice();
+    this.setState({
+      cartItems: cartItems.filter((item) => item._id !== product._id)
+    })
+  };
+
+  addToCart = (product) => {
+    const cartItems = this.state.cartItems.slice();
+    let alreadyInCart = false;
+    cartItems.forEach((item) => {
+      if(item._id === product._id){
+        item.count++;
+        alreadyInCart = true;
+      }
+    }) 
+    if (!alreadyInCart){
+      cartItems.push({...product, count: 1});
+    }
+    this.setState({cartItems})
   }
 
   render() { 
@@ -19,7 +43,14 @@ class App extends Component {
           <a href="/">React Ecommerce Sail App</a>
         </header>
           <main>
-          <Products products={this.state.products} />
+            <div className="content">
+              <div className="main">
+                <Products products={this.state.products} addToCart={this.addToCart} />
+              </div>
+              <div className="sidebar">
+                <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart}/>
+              </div>
+            </div>
           </main>
         <footer>
           <p>Footer</p>
