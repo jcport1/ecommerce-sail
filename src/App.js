@@ -5,13 +5,11 @@ import data from "./data.json";
 
 class App extends Component {
   
-  constructor() {
-    super();
-    this.state = { 
+ state = { 
       products: data.products,
       cartItems: [],
     };
-  }
+ 
 
   removeFromCart = (product) => {
     const cartItems = this.state.cartItems.slice();
