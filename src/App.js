@@ -8,6 +8,7 @@ class App extends Component {
  state = { 
       products: data.products,
       cartItems: [],
+      showSideBar: true,
     };
  
 
@@ -33,21 +34,37 @@ class App extends Component {
     this.setState({cartItems})
   }
 
+  toggleSideBar = () => {
+    this.setState({
+      showSideBar: !this.state.showSideBar
+    })
+  }
+
   render() { 
      
     return (
       <div className="grid-container">
         <header>
           <a href="/">React Ecommerce Sail App</a>
+          <button onClick={() => this.toggleSideBar()}>🛒</button>
         </header>
           <main>
             <div className="content">
               <div className="main">
                 <Products products={this.state.products} addToCart={this.addToCart} />
               </div>
-              <div className="sidebar">
-                <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart}/>
-              </div>
+              {
+                this.state.showSideBar? 
+                (
+                  <div className="sidebar"> 
+                  <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart}/>
+                  </div>
+
+                ) : (
+                  null 
+                )
+                
+               }
             </div>
           </main>
         <footer>
