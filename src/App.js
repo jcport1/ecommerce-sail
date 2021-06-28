@@ -7,16 +7,21 @@ class App extends Component {
   
  state = { 
       products: data.products,
-      cartItems: [],
+      cartItems: localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")) : [],
       showSideBar: true,
     };
+
+    createOrder = (order) => {
+      alert("need to save order for" + order.name)
+    }
  
 
   removeFromCart = (product) => {
     const cartItems = this.state.cartItems.slice();
     this.setState({
       cartItems: cartItems.filter((item) => item._id !== product._id)
-    })
+    });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems.filter((item) => item._id !== product._id)))
   };
 
   addToCart = (product) => {
@@ -32,6 +37,7 @@ class App extends Component {
       cartItems.push({...product, count: 1});
     }
     this.setState({cartItems})
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }
 
   toggleSideBar = () => {
@@ -57,7 +63,7 @@ class App extends Component {
                 this.state.showSideBar? 
                 (
                   <div className="sidebar"> 
-                  <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart}/>
+                  <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} createOrder={this.createOrder}/>
                   </div>
 
                 ) : (
